@@ -15,3 +15,10 @@ That is a project with my friend  @drewfoxall.
 3 - Docker.
 
 sko is #1 
+
+
+# fix test later
+
+docker-compose up - start u containers
+docker stop $(docker ps -a -q)
+docker rm $(docker ps -a -q)
