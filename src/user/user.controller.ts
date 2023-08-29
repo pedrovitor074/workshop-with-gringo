@@ -8,12 +8,7 @@ export class UserController {
 
   @Post()
   createUser(@Body() body: any) {
-    return this.userService.createUser(
-      body.name,
-      body.xPos,
-      body.yPos,
-      body.speed,
-    );
+    return this.userService.createUser(body.name);
   }
 
   @Get('/:name')

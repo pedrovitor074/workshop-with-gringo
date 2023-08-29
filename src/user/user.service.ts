@@ -1,16 +1,12 @@
 import { Injectable } from '@nestjs/common';
 import { User } from './user.model';
-import { arrayBuffer } from 'stream/consumers';
 
 @Injectable()
 export class UserService {
   users: User[] = [];
-  createUser(name: string, xPos: number, yPos: number, speed: number) {
+  createUser(name: string) {
     const user = new User();
     user.name = name;
-    user.xPos = xPos;
-    user.yPos = yPos;
-    user.speed = speed;
 
     if (this.users.filter((userArray) => userArray.name === name).length) {
       return 'This user already exists in our system';
