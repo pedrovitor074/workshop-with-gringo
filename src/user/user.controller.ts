@@ -1,5 +1,6 @@
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { UserService } from './user.service';
+import { stringify } from 'querystring';
 
 @Controller('user')
 export class UserController {
@@ -21,5 +22,9 @@ export class UserController {
     name: string,
   ) {
     return this.userService.getUserByName(name);
+  }
+  @Get('/all/users')
+  getAllUsers() {
+    return this.userService.getAllUsers();
   }
 }
