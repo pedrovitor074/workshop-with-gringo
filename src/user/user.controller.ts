@@ -8,18 +8,25 @@ export class UserController {
 
   @Post()
   createUser(@Body() body: any) {
-    return this.userService.createUser(body.name);
+    return this.userService.createUser(
+      body.id,
+      body.name,
+      body.email,
+      body.password,
+    );
   }
 
-  @Get('/:name')
+  @Get('/:ID')
   getUser(
-    @Param('name')
-    name: string,
+    @Param('ID')
+    ID: number,
   ) {
-    return this.userService.getUserByName(name);
+    return this.userService.getUserByID(ID);
   }
   @Get('/all/users')
   getAllUsers() {
     return this.userService.getAllUsers();
   }
+  // @Post('user/new/user')
+  // login()
 }

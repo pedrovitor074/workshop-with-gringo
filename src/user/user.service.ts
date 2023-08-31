@@ -4,18 +4,24 @@ import { User } from './user.model';
 @Injectable()
 export class UserService {
   users: User[] = [];
-  createUser(name: string) {
-    const user = new User();
-    user.name = name;
+  createUser(ID: number, name: string, email: string, password: string) {
+    const user = new User(ID, name, email, password);
 
     if (this.users.filter((userArray) => userArray.name === name).length) {
-      return 'This user already exists in our system';
+      return 'This email is already in use.';
     }
     this.users.push(user);
     return user;
   }
-  getUserByName(name: string) {
-    return this.users.filter((user) => user.name === name);
+  login(email: string, password: string) {
+    if (this.users.filter((user) => user.email === email).length) {
+      if (this.users.filter((user) => user.password === password).length)
+        return 'You are logged in';
+    }
+    return 'This user is not in the system';
+  }
+  getUserByID(ID: number) {
+    return this.users.filter((user) => user.ID === ID);
   }
 
   getAllUsers() {
