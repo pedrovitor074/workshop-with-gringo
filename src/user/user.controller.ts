@@ -27,6 +27,8 @@ export class UserController {
   getAllUsers() {
     return this.userService.getAllUsers();
   }
-  // @Post('user/new/user')
-  // login()
+  @Post('/user/new/user')
+  login(@Body() body: any) {
+    return this.userService.login(body.email, body.password);
+  }
 }
