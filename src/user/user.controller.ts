@@ -8,12 +8,7 @@ export class UserController {
 
   @Post()
   createUser(@Body() body: any) {
-    return this.userService.createUser(
-      body.id,
-      body.name,
-      body.email,
-      body.password,
-    );
+    return this.userService.createUser(body.name, body.email, body.password);
   }
 
   @Get('/:ID')
@@ -23,6 +18,7 @@ export class UserController {
   ) {
     return this.userService.getUserByID(ID);
   }
+
   @Get('/all/users')
   getAllUsers() {
     return this.userService.getAllUsers();
