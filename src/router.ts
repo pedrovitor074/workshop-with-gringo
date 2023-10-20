@@ -4,7 +4,14 @@ import { CarService } from "./car/car.service";
 const router: Router = Router();
 const service = new CarService();
 let visitorCount = 0;
+
 //Routes
+
+/**
+ * ROADMAP
+ * 1 - We gonna change the routes we call to a controller
+ * 2 - Resource Root
+ */
 
 router.get("/", (req, res) => {
   visitorCount = visitorCount + 1;
