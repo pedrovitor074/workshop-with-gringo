@@ -23,12 +23,9 @@ router.put("/:id", (req, res) => {
   res.send(
     service.updateCar(
       req.params.id,
-      req.body.owner,
-      req.body.documents,
       req.body.brand,
-      req.body.model,
       req.body.color,
-      req.body.yearCreated
+      req.body.model
     )
   );
   res.end();
@@ -49,7 +46,7 @@ router.get("/sortedcars", (req, res) => {
   res.end();
 });
 
-router.get("/:id", (req, res) => {
+router.get("/car/:id", (req, res) => {
   const id = req.params.id;
   res.send(service.getCarById(id));
   res.end();
@@ -58,13 +55,10 @@ router.get("/:id", (req, res) => {
 router.post("/", (req, res) => {
   res.send(
     service.createCar(
-      req.body.id,
-      req.body.owner,
-      req.body.documents,
       req.body.brand,
       req.body.color,
       req.body.model,
-      req.body.yearCreated
+      req.body.dateCreated
     )
   );
   res.end();

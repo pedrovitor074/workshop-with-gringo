@@ -5,3 +5,10 @@
 5 - IMRPOVE THIS CHECK ABOUT THE LENGTH.
 6 - IMPROVE THE SORTS ( QUERY PARAMS ).
 7 - CONNECTION TO THE DATABASE.
+
+@---
+The project is probably be something with seeling cars
+
+@--- PROBLEMS
+
+1 - We dont have a way to difference the cars on the system right now
