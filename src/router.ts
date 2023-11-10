@@ -25,7 +25,9 @@ router.put("/:id", (req, res) => {
       req.params.id,
       req.body.brand,
       req.body.color,
-      req.body.model
+      req.body.model,
+      req.body.dateCreated,
+      req.body.owner
     )
   );
   res.end();
@@ -58,7 +60,9 @@ router.post("/", (req, res) => {
       req.body.brand,
       req.body.color,
       req.body.model,
-      req.body.dateCreated
+      req.body.dateCreated,
+      req.body.owner,
+      req.body.carDocuments
     )
   );
   res.end();
